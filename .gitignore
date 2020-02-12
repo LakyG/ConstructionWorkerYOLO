@@ -1,3 +1,11 @@
+# Directories
+Images/
+.vs/
+
+# YOLO Files
+*.weights
+*.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
