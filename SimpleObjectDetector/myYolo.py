@@ -4,18 +4,18 @@ import cv2
 import numpy as np
 
 # Load Yolo
-#net = cv2.dnn.readNet("yolov3-320.weights", "yolov3-320.cfg")
-#net = cv2.dnn.readNet("yolov3-416.weights", "yolov3-416.cfg")
-net = cv2.dnn.readNet("yolov3-608.weights", "yolov3-608.cfg")
+#net = cv2.dnn.readNet("../yolov3-320.weights", "../yolov3-320.cfg")
+#net = cv2.dnn.readNet("../yolov3-416.weights", "../yolov3-416.cfg")
+net = cv2.dnn.readNet("../yolov3-608.weights", "../yolov3-608.cfg")
 classes = []
-with open("coco.names", "r") as f:
+with open("../coco.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
 layer_names = net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
 # Loading image
-img = cv2.imread("Images/workers4.jpg")
+img = cv2.imread("../Images/workers4.jpg")
 
 # Resize image if needed
 if (img.shape[1] > 1500):
